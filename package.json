@@ -1,4 +1,5 @@
 {
+  "homepage": "http://fhejs7g.github.io/Instagram-clone",
   "name": "1st-project",
   "version": "0.1.0",
   "private": true,
@@ -14,6 +15,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy":"npm rum build",
+    "deploy":"gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -37,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "react-icon": "^1.0.0",
     "react-icons": "^4.4.0"
   }
