@@ -1,106 +1,20 @@
-import React, {useEffect,useState}from 'react';
-import Likes from './liked';
-import useSingleAndDoubleClick from './doubleclicked';
-import MoreOptions from './more-options';
-import CommentOverlay from './coment-overlay';
-function Main({users,delay = 7000}) {
-    let getrandomnumber = Math.floor(Math.random() * 14000)
-    const  [save, setsave] = React.useState(false)
-    const  [likesCount, setlikesCount] = React.useState(getrandomnumber)
-    const[likes, setlikes] = React.useState(false)
-    const[doubleclickedlike, setdoubleclickedlike] = React.useState(true)
+import React, { useState ,useEffect} from 'react';
+
+
+const url = 'https://randomuser.me/api/?results='
+ 
+function FetchUsers() {
+    const [ users,setusers] = useState([])
+     
+    React.useEffect(() => {
+        fetch(url)
+        .then(res => res.json())
+        .then(data=> setusers(data.results)) 
+    },[])
     
-    function liked() {
-        setlikes(pre => !pre)
-    }
-    function increment() {
-        setlikesCount(pre => pre + 1)
-    }
-    const click = useSingleAndDoubleClick(hey, doubleClickLiked);
-    function doubleClickLiked() {
-       
-    if (doubleclickedlike) {
-    increment()
-    }
-    setdoubleclickedlike(false)
-        let post = document.querySelector(".double-liked-logo")
-     post.classList = `_ab6- double-liked-logo double-liked-transition `
-    
-       return    liked()
-    }
-    function toggleSave() {
-  if (! save) {
-    let post = document.querySelector(".saved-message")
-    console.log(post);
-    post.classList = `saved-message show-saved-message`
-  }
-    setsave(pre => !pre)
-  }
-  
-  useEffect(()=>{
-    const timer = setTimeout(() => {
-        // simple click
-          
-    }, delay);
-    const t = setTimeout(() => {
-        // simple click
-        let post = document.querySelector(".saved-message")
- post.classList = `saved-message`
-    }, delay);
-    return () => clearTimeout(timer);
-  },[toggleSave])
-  
-    function onclickMoreOptions() {
-       let more = document.querySelector('.more-overlay ')
-       more.classList = `modal-overlay more-overlay   open-modal`
-    }
-    function ExitMoreOptions() {
-       let more = document.querySelector('.more-overlay')
-       more.classList = `modal-overlay more-overlay`
-    }
-    function hey() {
-        return ''
-    } 
-    function onclickComent() {
-        let comment = document.querySelector('.coment-overlay ')
-        comment.classList = `coment-overlay modal-overlay open-modal`
-        console.log(comment.className);
-     }
-    function closeComent() {
-        let comment = document.querySelector('.open-modal')
-        comment.classList = `modal-overlay coment-overlay`
-        console.log(comment.className);
-
-     }
-
-
-
-
-
-
-
-
-    return ( 
-         <main>
-   <div className="main">
-      <div className="main-top main1">
-          <div className="stories">
-              <div className="story">
-                  <div className="line">
-                      <img src="IMG_20180823_124738.jpg" alt="story" className="story-img"/>
-                  </div>
-                  <p className="story-name">that-guys</p>
-              </div>
-              <div className="story">
-              <div className="line">
-                  <img src="1531923071172.jpg" alt="story" className="story-img"/>
-              </div>
-               <p className="story-name">that-guy</p>
-              </div>
-          </div>
-      </div>
-            <div className="main-bottom ">
-          {/* mapped through the api */}
+    return (  
+        <>
+        
         {users.map((user) =>{
             const {name:{first},
             location:{postcode,street:{number}},
@@ -108,7 +22,10 @@ function Main({users,delay = 7000}) {
             picture:{large},
             registered:{age}
         } = user
-                /* returned each post as an article */
+
+
+
+
               return (
                 <article className="post" key={uuid}>
                 <div className="post-nav">
@@ -193,12 +110,8 @@ function Main({users,delay = 7000}) {
             </article>
               )
             })}
-
-           
-      </div>
-   </div>
-  </main>
-     );
+        </>
+    );
 }
 
-export default Main;
+export default FetchUsers;
