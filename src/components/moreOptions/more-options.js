@@ -1,7 +1,12 @@
-import React from 'react';
-function MoreOptions({ExitMoreOptions}) {
+import React ,{useContext}from 'react';
+import { PostData } from '../useContext';
+
+function MoreOptions() {
+  const {userdatum,setUserdatum,ExitMoreOptions} = useContext(PostData)
     return ( 
-        <div class="modal-overlay more-overlay">
+        <div class={`modal-overlay more-overlay ${
+          userdatum.moreOptions ? ' open-modal': ''
+        }`}>
         <div class="modal-container">
         <div class="moreO-div Alert">Report</div>
           <div class="moreO-div Alert">Unfollow</div>
@@ -10,7 +15,7 @@ function MoreOptions({ExitMoreOptions}) {
           <div class="moreO-div">Share to...</div>
           <div class="moreO-div">Copy link</div>
           <div class="moreO-div">Embed</div>
-          <div class="moreO-div ex">Cancel</div>
+          <div class="moreO-div ex" onClick={ExitMoreOptions}>Cancel</div>
         </div>
         <button className='close-btn' onClick={ExitMoreOptions}></button>
       </div>

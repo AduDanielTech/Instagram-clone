@@ -1,5 +1,5 @@
 import React from 'react';
-import Search from './onserchboxclick';
+import Search from './search/share/onserchboxclick';
 function Nav() {
     const [sort,setSort] = React.useState(true)
     function showHiddenDiv(t) {
