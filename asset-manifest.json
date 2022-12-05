@@ -1,15 +1,15 @@
 {
-  "main.css": "/Instagram-clone/static/css/main.dce3e29e.chunk.css",
-  "main.js": "/Instagram-clone/static/js/main.b7b0f318.chunk.js",
-  "main.js.map": "/Instagram-clone/static/js/main.b7b0f318.chunk.js.map",
-  "static/js/1.7ab2393a.chunk.js": "/Instagram-clone/static/js/1.7ab2393a.chunk.js",
-  "static/js/1.7ab2393a.chunk.js.map": "/Instagram-clone/static/js/1.7ab2393a.chunk.js.map",
-  "static/js/2.b2d8e58b.chunk.js": "/Instagram-clone/static/js/2.b2d8e58b.chunk.js",
-  "static/js/2.b2d8e58b.chunk.js.map": "/Instagram-clone/static/js/2.b2d8e58b.chunk.js.map",
-  "runtime~main.js": "/Instagram-clone/static/js/runtime~main.e9f23d51.js",
-  "runtime~main.js.map": "/Instagram-clone/static/js/runtime~main.e9f23d51.js.map",
-  "static/css/main.dce3e29e.chunk.css.map": "/Instagram-clone/static/css/main.dce3e29e.chunk.css.map",
+  "main.css": "/Instagram-clone/static/css/main.bd8390bc.chunk.css",
+  "main.js": "/Instagram-clone/static/js/main.129fca61.chunk.js",
+  "main.js.map": "/Instagram-clone/static/js/main.129fca61.chunk.js.map",
+  "runtime~main.js": "/Instagram-clone/static/js/runtime~main.8d6d2f16.js",
+  "runtime~main.js.map": "/Instagram-clone/static/js/runtime~main.8d6d2f16.js.map",
+  "static/js/2.26c7f486.chunk.js": "/Instagram-clone/static/js/2.26c7f486.chunk.js",
+  "static/js/2.26c7f486.chunk.js.map": "/Instagram-clone/static/js/2.26c7f486.chunk.js.map",
+  "static/js/3.d1aa7915.chunk.js": "/Instagram-clone/static/js/3.d1aa7915.chunk.js",
+  "static/js/3.d1aa7915.chunk.js.map": "/Instagram-clone/static/js/3.d1aa7915.chunk.js.map",
   "index.html": "/Instagram-clone/index.html",
-  "precache-manifest.513ba897495980f978c2886ec778ef00.js": "/Instagram-clone/precache-manifest.513ba897495980f978c2886ec778ef00.js",
-  "service-worker.js": "/Instagram-clone/service-worker.js"
+  "precache-manifest.600552fbc670be6b8d011342b0c1048f.js": "/Instagram-clone/precache-manifest.600552fbc670be6b8d011342b0c1048f.js",
+  "service-worker.js": "/Instagram-clone/service-worker.js",
+  "static/css/main.bd8390bc.chunk.css.map": "/Instagram-clone/static/css/main.bd8390bc.chunk.css.map"
 }
