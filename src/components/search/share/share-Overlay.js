@@ -1,12 +1,13 @@
 import { setSelectionRange } from '@testing-library/user-event/dist/utils';
 import { relativeTimeRounding } from 'moment/moment';
 import React, { useState,useContext,useEffect } from 'react';
-import { UserDetails,PostData , StoryData } from '../../useContext';
-
+import { UserDetails,PostData , StoryData,GlobalData } from '../../useContext';
+import {nanoid} from 'nanoid'
 
 
 function ForwardPost() {
     const {story} = useContext(UserDetails)
+    const {linkNoWork,buttonNoWork,Link} = useContext(GlobalData)
     const {
         userdatum,
         setUserdatum,
@@ -44,7 +45,7 @@ function ForwardPost() {
        <input type="text" placeholder='Search...'/>
 
        </div>
-       <div className="shareDivs share-suggestions">
+       <div className="shareDivs share-suggestions" key={nanoid()}>
          <p>Suggested</p>  
          <div className='friends'  >
          {story.map((user) =>{
@@ -71,17 +72,26 @@ function ForwardPost() {
     </div> `
     personAppended.addEventListener('click', removeClicked )
    if (!shareDetails.creteEl) {
-    appended.appendChild(personAppended)
-    console.log(personAppended);
+    appended.append(personAppended)
+
    }else{
     let appendee = document.querySelector('.a')
    }
-        setShareDetails(pre => {
-            return {
-                ...pre,
-                creteEl : !shareDetails.creteEl,
-            }
-        })
+       shareDetails.creteEl
+       ? 
+       setShareDetails(pre => {
+        return {
+            ...pre,
+            creteEl : false,
+        }
+    }):
+    setShareDetails(pre => {
+        return {
+            ...pre,
+            creteEl : true,
+        }
+    })
+
     
     }
 
@@ -97,7 +107,7 @@ function ForwardPost() {
              large
           }}>
              
-             <div className="friend">
+             <div className="friend"  key={nanoid()}>
             <div className="details1 " >
             <img src={large}
             className='story-img share-pfp-img' alt='pfp-img  '/>
@@ -143,7 +153,7 @@ function ForwardPost() {
         <input type="text"
         placeholder='write a  message..'
          />
-       <button className='send-share '>
+       <button className='send-share ' onClick={linkNoWork}>
             Send
         </button>
        </div>

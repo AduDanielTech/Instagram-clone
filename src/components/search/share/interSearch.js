@@ -1,6 +1,9 @@
 import React from 'react';
+import { useContext } from 'react';
+import { GlobalData } from '../../useContext';
+
 function InterSearch({closeSearchBar}) {
-    
+    const {linkNoWork,} = useContext(GlobalData)
     function deleteAllSearch() {
     let parentEl=   document.querySelector('.recent')
     
@@ -22,7 +25,7 @@ function InterSearch({closeSearchBar}) {
                     <div className="recent">
                         <div className=" skelenton ">
                             
-                            <div className="skelenton_block post-profile-search serach-img-div">
+                            <div onClick={linkNoWork} className="skelenton_block post-profile-search serach-img-div">
                                 <img src="https://randomuser.me/api/portraits/men/16.jpg" alt="pfp" className="story-img post-profile-search"/></div>
                             <div className="skelenton_block iR s">hey</div>
                             <div className="skelenton_block s">hey</div>
@@ -32,7 +35,7 @@ function InterSearch({closeSearchBar}) {
                         </div>
                         <div className=" skelenton ">
                             
-                            <div className="skelenton_block post-profile-search serach-img-div">
+                            <div onClick={linkNoWork} className="skelenton_block post-profile-search serach-img-div">
                                 <img src="https://randomuser.me/api/portraits/men/16.jpg" alt="pfp" className="story-img post-profile-search"/></div>
                             <div className="skelenton_block iR s">hey</div>
                             <div className="skelenton_block s">hey</div>
@@ -42,7 +45,7 @@ function InterSearch({closeSearchBar}) {
                         </div>
                         <div className=" skelenton ">
                             
-                            <div className="skelenton_block post-profile-search serach-img-div">
+                            <div onClick={linkNoWork} className="skelenton_block post-profile-search serach-img-div">
                                 <img src="https://randomuser.me/api/portraits/men/16.jpg" alt="pfp" className="story-img post-profile-search"/></div>
                             <div className="skelenton_block iR s">hey</div>
                             <div className="skelenton_block s">hey</div>

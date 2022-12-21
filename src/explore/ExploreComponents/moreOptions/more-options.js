@@ -1,14 +1,13 @@
 import React ,{useContext}from 'react';
-import { PostData,GlobalData } from '../useContext';
+  import { GlobalData } from '../../../components/useContext';
 
-function MoreOptions() {
-  const {linkNoWork,Link} = useContext(GlobalData)
-  const {userdatum,ExitMoreOptions} = useContext(PostData)
+function ExploreMoreOptions({ExitMoreOptions,state}) {
+  const {linkNoWork,buttonNoWork,Link} = useContext(GlobalData)
     return ( 
         <div class={`modal-overlay more-overlay ${
-          userdatum.moreOptions ? ' open-modal': ''
+          state.moreOptions ? ' open-modal': ''
         }`}>
-        <div  class="modal-container">
+        <div class="modal-container">
         <div onClick={linkNoWork} class="moreO-div Alert">Report</div>
           <div onClick={linkNoWork} class="moreO-div Alert">Unfollow</div>
           <div onClick={linkNoWork} class="moreO-div">Add to favorites</div>
@@ -23,4 +22,4 @@ function MoreOptions() {
      );
 }
 
-export default MoreOptions;
+export default ExploreMoreOptions;

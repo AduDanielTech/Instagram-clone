@@ -2,16 +2,17 @@ import React, {useEffect,useState,useRef}from 'react';
 import useSingleAndDoubleClick from './like/doubleclicked';
 import  { useContext } from "react";
 import Likes from './like/liked';
-import { userData, UserDetails,PostData } from './useContext';
+import { userData, UserDetails,PostData ,GlobalData} from './useContext';
 import MoreOptions from './moreOptions/more-options';
 import CommentOverlay from './comments/coment-overlay';
 import ForwardPost from './search/share/share-Overlay';
 import ViewAllComments from './comments/viewAllComments';
-
+import date from './date';
 
 
 function Posts({delay = 4000}) {
     const {first, number,uuid,username,postcode,age,large} = useContext(userData)
+    const {linkNoWork,buttonNoWork,Link} = useContext(GlobalData)
    const geLikeno = Math.floor(Math.random() * 15000)
    const getCommentNo = Math.floor(Math.random() * 5000)
    const {empty, comments} = useContext(UserDetails)
@@ -64,7 +65,7 @@ function Posts({delay = 4000}) {
 
     const click = useSingleAndDoubleClick(bleh, doubleClickLiked);
 function bleh() {
-   ' console.log(userdatum.doubleclickedlike);'
+   ' (userdatum.doubleclickedlike);'
 }
 
     function doubleClickLiked(e) {
@@ -89,7 +90,7 @@ function bleh() {
            return    likedClicked()
         }
             function addDouble(e) {
-                return console.log(e.target.className);
+                return (e.target.className);
             }
 
 
@@ -170,11 +171,12 @@ function bleh() {
                     }
                 })
              }
-             let date = new Date()
-           let  year =  date.getFullYear() ;
-           let month = date.getMonth() + 1
-           let day =  date.getDate();
-             let thisDate = year + '-' + month + '-' + day
+            
+             let thisDate = date()
+              function randomNumberLessThan4000() {
+                // Generate a random number between 0 and 3999
+                return Math.floor(Math.random() * 4000);
+              }
 
 
 
@@ -235,18 +237,22 @@ function bleh() {
        setUserdatum,
        ExitMoreOptions,
        toggleSave,
-       
+       thisDate
        }}>
          <article className="post" key={userdatum.id} >
         <div className="post-nav">
+            <Link to={`/${userdatum.username}`}>
             <div className="user-details">
-                <div className="post-line ">
-                    <img src={userdatum.img} className='story-img pfp-img' alt='pfp-img'/>
+                <div className="post-line " >
+                    <img src={userdatum.img} className='story-img pfp-img' alt='pfp-img' />
                 </div>
-                <p className="post-username">
+                <p className="post-username" style={{
+                    color:'black',
+                }}>
                     {userdatum.username} 
                 </p>
             </div>
+            </Link>
             <div className="more-options" onClick={onclickMoreOptions}>
                 <svg aria-label="More options" className="_ab6- logo" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
             </div>
@@ -317,11 +323,11 @@ function bleh() {
             </div>
            
         </div>
-        <div className="post-likes details">
+        <div className="post-likes details" onClick={linkNoWork}>
                 <div className="blackdot"></div>
-                <p>Liked by <strong>feyi_</strong> and <strong> {userdatum.likesCount} others</strong></p>
+                <p> <strong> {userdatum.likesCount} likes</strong></p>
             </div>
-            <div className="post-desc details">
+            <div className="post-desc details" onClick={linkNoWork}>
                 <p><strong>yabaleftonline</strong> Mothers on the tl</p>
             </div>
             <div className="post-comments details">
@@ -331,7 +337,7 @@ function bleh() {
                 <ViewAllComments/>
             
             </div>
-            <div className="post-time details">
+            <div className="post-time details" onClick={linkNoWork}>
             {thisDate}
             </div>
     

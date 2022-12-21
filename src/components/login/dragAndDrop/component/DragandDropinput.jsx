@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './drop-file-input.css';
 import { ImageConfig } from '../imageConfig';
-function DropFileLoginInput(props) {
+function DropFileInput(props) {
     const wrapperRef = useRef(null)
     const [fileList, setFilelist] = useState([])
     const onDragEnter = () => wrapperRef.current.classList.add('dragover')
@@ -12,27 +12,13 @@ function DropFileLoginInput(props) {
     const onDrop = () => wrapperRef.current.classList.remove('dragover')
     
     const onFileDrop = (e) => {
-        e.preventDefault();
         const  newFile = e.target.files[0];
         if(newFile){
             const updatedList = [...fileList, newFile];
             setFilelist(updatedList)
             props.onFileChange(updatedList);
         }
-        props.setPostStates(pre=>{
-            return {
-                ...pre,
-                fileDropped:true,
-            }
-        })
-        e.preventDefault();
-              const file = e.dataTransfer.files[0];
-              const reader = new FileReader();
-              reader.onload = (event) => {
-                const img = document.getElementById("preview");
-                img.src = event.target.result;
-              };
-              reader.readAsDataURL(file);
+      
     }
     function fileRemove(file) {
         const updatedList = [...fileList];
@@ -65,11 +51,14 @@ function DropFileLoginInput(props) {
                     {fileList.map((item, index)=>{
                         return(
                             <div className="drop-file-preview_item" key={index}>
-                            <img
+                            <img src={
+                                ImageConfig[item.type.split('/')[1]]
+                                ||
+                                ImageConfig['default']
+                            } 
                             alt="ye"     
                             style={{    
-                            }} 
-                            id="preview"/>
+                            }} />
                                 <div className="drop-file-preview_item_info">
                                     <p>{item.name}</p>
                                     <p>{item.size}B</p>
@@ -86,12 +75,13 @@ function DropFileLoginInput(props) {
         ): null
       } 
      
+     
       </>
      );
      
 }
-DropFileLoginInput.propTypes = {
+DropFileInput.propTypes = {
     onFileChange: PropTypes.func
 }
 
-export default DropFileLoginInput;
+export default DropFileInput;

@@ -14,6 +14,7 @@ function CommentOverlay() {
         setUserdatum,
         ExitMoreOptions,
         toggleSave,
+        thisDate
     } = useContext(PostData)
       const [inputField, setInputField] = useState('')
       const previnput = useRef( )
@@ -79,12 +80,11 @@ function closeComment() {
                       {userdatum.username} 
                       </p>
                   </div>
-                  <div className="more-options">
-                    
+                  <div className="more-options ">
+                  
                   </div>
          <MoreOptions  ExitMoreOptions={ExitMoreOptions}/>
               </div>
-              
               <div className="post-pic-div" onClick={(e) => {
             click()
           if (userdatum.doubleclickedlike) {
@@ -150,7 +150,7 @@ function closeComment() {
                       <p>Liked by <strong>feyi_</strong> and <strong>{userdatum.likesCount} others</strong></p>
                   </div>
                   <div className="post-time comment-details  details">
-                   1-1-1
+                 {thisDate}
                   </div>
               </div>
              <div className='comment-input'>
@@ -182,7 +182,6 @@ function closeComment() {
                 
           
           </article>
-
               </div>
               <button
               className='close' onClick={closeComment}> 

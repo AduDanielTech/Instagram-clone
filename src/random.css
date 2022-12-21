@@ -10,6 +10,7 @@ Global styles
 ::after,
 ::before {
   margin: 0;
+  margin-top: -3rem;
   padding: 0;
   box-sizing: border-box;
 }
@@ -308,7 +309,7 @@ skelenton loader
 
 
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width:600px) {
   h1 {
     font-size: 4rem;
   }
@@ -762,7 +763,7 @@ skelenton loader end
     margin-right: 3px;
    }
     /* OPEN/CLOSE MORE OPTIONS */
-   .modal-overlay {
+   /* .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -775,12 +776,12 @@ skelenton loader end
     visibility: visible;
     z-index: -10;
 
-  }
- 
+  } */
+/*  
   .open-modal {
     visibility: visible;
     z-index: 10;
-  }
+  } */
   .modal-container {
     background:white;
     border-radius: 20px;
@@ -973,7 +974,7 @@ skelenton loader end
 
 
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width:600px) {
     h1 {
       font-size: 4rem;
     }

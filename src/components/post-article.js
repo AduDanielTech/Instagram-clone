@@ -1,9 +1,13 @@
 import React from 'react';
+import { GlobalData } from './useContext';
 function PostArticle({}) {
+    const {linkNoWork,buttonNoWork,Link} = useContext(GlobalData)
     return (  
         <div className="main-bottom ">
         <article className="post">
             <div className="post-nav">
+<Link to='* '>
+
                 <div className="user-details">
                     <div className="post-line ">
                         <img src="https://randomuser.me/api/portraits/men/16.jpg" alt="pfp" className="story-img post-profile-img"/>
@@ -12,6 +16,7 @@ function PostArticle({}) {
                         hey
                     </p>
                 </div>
+</Link>
                 <div className="more-options" onClick={onclickMoreOptions}>
                     <svg aria-label="More options" className="_ab6- logo" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
                 </div>
@@ -41,7 +46,7 @@ function PostArticle({}) {
                                 </div>
                             </div>
                             <div>
-                                <div className="sharepost-logo post-logo">
+                                <div className="sharepost-logo post-logo" onClick={buttonNoWork}>
                                     <svg aria-label="Share Post" className="_ab6- logo" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><line fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth="2" x1="22" x2="9.218" y1="3" y2="10.083"></line><polygon fill="none" points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334" stroke="currentColor" strokeLinejoin="round" strokeWidth="2"></polygon></svg>
                                 </div>
                             </div>
@@ -64,17 +69,17 @@ function PostArticle({}) {
                         </ul>
                     
                 </div>
-                <div className="post-likes details">
+                <div onClick={linkNoWork} className="post-likes details">
                     <div className="blackdot"></div>
                     <p>Liked by <strong>feyi_</strong> and <strong>{likesCount} others</strong></p>
                 </div>
-                <div className="post-desc details">
+                <div onClick={linkNoWork} className="post-desc details">
                     <p><strong>yabaleftonline</strong> Mothers on the tl</p>
                 </div>
-                <div className="post-comments details">
+                <div onClick={linkNoWork} className="post-comments details">
                    <span className="comme nts">View all 679 comments</span>
                 </div>
-                <div className="post-time details">
+                <div onClick={linkNoWork} className="post-time details">
                  1-1-1
                 </div>
             </div>

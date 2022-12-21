@@ -1,0 +1,222 @@
+:root{
+    --ig-secondary-text: 142, 142, 142;
+}
+.login-page{
+    width: 100%;
+    height: 100%;
+    background-color: var(--fds-gray-15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+.login-page > .links{
+    position: sticky;
+    bottom: 0;
+}
+.center{
+ box-shadow: 0px 0px 1px 1px var( --fds-gray-30);
+ width: 43%;
+ height: 80%;padding: 2rem;
+ background-color: white;
+ position: relative;
+}
+.txt_field >input{
+    border: 1px solid var( --fds-gray-30);
+    width: 100%;
+    padding: 5px;
+}
+.center > :nth-child(1){
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;position: relative;
+    margin-bottom: 2rem;
+}
+.center > :nth-child(1) > :last-child{
+   position: absolute;
+   left: 45%;
+   bottom: -13px;
+}
+.logo-cont{
+    display: flex;
+    position: relative;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid  var( --fds-gray-30);
+    
+}
+.login-ig-cont{
+
+  font-size: 30px;
+    position: relative;
+}
+.instagram-logo-login{
+    width: 150px;
+  height: 150px;
+}
+.text{
+    font-size:15px ;
+    font-weight: bold;
+    color: var(--fds-text-color);
+    color:rgb(174, 172, 172) ;
+}
+.log-in-with-facebook{
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    height: 2rem;
+    background-color: var( --blue-5);
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.log-in-with-facebook > i {
+    color: white;
+    padding-right: 1rem;
+   
+    
+}
+.or{
+    width: fit-content;
+    padding: 3px;
+    background-color: rgb(255, 255, 255);
+    height:auto;
+}
+.file-cont{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var( --fds-gray-30);
+}
+.center > :nth-child(2){
+  
+   display: flex;
+   flex-direction: column;
+   font-size: 15px;
+}
+.center > :nth-child(2) > div{
+    margin-bottom: 0.2rem;
+}
+#upload-photo {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+ }
+ .file_field{
+ 
+    width: 100%;
+    padding: 5px;
+    color: grey;
+    text-transform: capitalize;
+ }
+@media screen and (min-width: 100px){
+    .login-page{
+        background-color: none;
+        margin-left: 0rem;
+        margin-right: 0rem;
+        width: auto;
+        height: auto;
+    }
+    .center{
+        box-shadow: 0px 0px 0px 0px ;
+        width: fit-content;
+        height: 80%;padding: 2rem;
+         display: flex;
+         flex-direction: column;
+         
+         position: relative;
+       }
+       .center > div{
+            height: 50%;
+            
+        }
+    
+
+  
+}
+
+
+
+
+
+
+@media screen and (min-width: 600px){
+    .login-page{
+        margin-left: -12rem;
+        margin-right: -1rem;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--fds-gray-15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Inter', sans-serif;
+    }
+    .center{
+     box-shadow: 0px 0px 1px 1px var( --fds-gray-30);
+     width: 43%;
+     height: 80%;padding: 2rem;
+     display: flex;
+     flex-direction: column;
+    }
+    .center > :nth-child(1){
+
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+    .logo-cont{
+        display: flex;
+        position: relative;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid  var( --fds-gray-30);
+    }
+    .text{
+        font-size:15px ;
+        font-weight: bold;
+        color: var(--fds-text-color);
+        color:rgb(174, 172, 172) ;
+    }
+    .log-in-with-facebook{
+        margin-top: 1rem;
+        width: 100%;
+        text-align: center;
+        height: 2rem;
+        background-color: var( --blue-5);
+        border: none;
+        border-radius: 0.5rem;
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .log-in-with-facebook > i {
+        color: white;
+        padding-right: 1rem;
+       
+        
+    }
+   
+    .center > :nth-child(2){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
