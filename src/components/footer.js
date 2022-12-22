@@ -177,7 +177,7 @@ function Footer({Link,postImg,setpostimg,desktopView }) {
            <>
             <div className="tools">
    <div className='tools-cont'>
-  <Link to='/homepage' >
+  <Link to='/homepage' className='tools-child'>
   <span className="home-logo logo" onClick={onClickHome}>
  {
  footer.instagramLogo ? 
@@ -194,7 +194,7 @@ function Footer({Link,postImg,setpostimg,desktopView }) {
 </Link>
 
 
- <Link to='/homepage' >
+ <Link to='/homepage' className='tools-child'>
           <span className="footer-span home-logo bolded logo" onClick={onClickHome}>
             { footer.homelogo ? 
             
@@ -207,7 +207,7 @@ function Footer({Link,postImg,setpostimg,desktopView }) {
           </span>
       </Link>
 
-          <span className="footer-span home-logo logo" onClick={onClickSearch}>
+          <span className="footer-span home-logo logo  tools-child" onClick={onClickSearch}>
             { footer.search ? 
             <svg aria-label="Search" class="_ab6-" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M18.5 10.5a8 8 0 1 1-8-8 8 8 0 0 1 8 8Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" x1="16.511" x2="21.643" y1="16.511" y2="21.643"></line></svg>
             :
@@ -217,7 +217,7 @@ function Footer({Link,postImg,setpostimg,desktopView }) {
           </span>
      
 
-       <Link to='/explore' element={<Explore />}>
+       <Link to='/explore' element={<Explore />} className='tools-child'>
           <span className="footer-span explore-logo logo" onClick={onClickExplore}>
             {footer.Explore ?
             <svg aria-label="Explore" class="_ab6-" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="m13.173 13.164 1.491-3.829-3.83 1.49ZM12.001.5a11.5 11.5 0 1 0 11.5 11.5A11.513 11.513 0 0 0 12.001.5Zm5.35 7.443-2.478 6.369a1 1 0 0 1-.57.569l-6.36 2.47a1 1 0 0 1-1.294-1.294l2.48-6.369a1 1 0 0 1 .57-.569l6.359-2.47a1 1 0 0 1 1.294 1.294Z"></path></svg>
@@ -227,7 +227,7 @@ function Footer({Link,postImg,setpostimg,desktopView }) {
             {footer.instagramLogo ?  <div>Explore</div> : <></>} 
           </span>
       </Link>
-       <Link to='*' className='back-to-homepage'  onClick={onClickForward}>
+       <Link to='*' className='back-to-homepage  tools-child'  onClick={onClickForward}>
               <span className="footer-span  send-logo logo" >
                 {footer.ForWard?
                   <svg aria-label="Direct" class="_ab6-" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M22.91 2.388a.69.69 0 0 0-.597-.347l-20.625.002a.687.687 0 0 0-.482 1.178L7.26 9.16a.686.686 0 0 0 .778.128l7.612-3.657a.723.723 0 0 1 .937.248.688.688 0 0 1-.225.932l-7.144 4.52a.69.69 0 0 0-.3.743l2.102 8.692a.687.687 0 0 0 .566.518.655.655 0 0 0 .103.008.686.686 0 0 0 .59-.337L22.903 3.08a.688.688 0 0 0 .007-.692" fill-rule="evenodd"></path></svg>
@@ -239,7 +239,7 @@ function Footer({Link,postImg,setpostimg,desktopView }) {
                
               </span>
           </Link>
-          <span className="footer-span  heart-logo logo" onClick={onClicknotifications}>
+          <span className="footer-span tools-child heart-logo logo" onClick={onClicknotifications}>
                 {footer.notifications?
                   <svg aria-label="Notifications" class="_ab6-" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 48 48" width="24"><path d="M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"></path></svg>
                   :
@@ -249,7 +249,7 @@ function Footer({Link,postImg,setpostimg,desktopView }) {
               {footer.instagramLogo ?  <div> Notifications</div> : <></>} 
                 
               </span>
-       <Link to='/homepage' className='back-to-homepage'>
+       <Link to='/homepage' className='back-to-homepage  tools-child' >
           <span className="footer-span post-logo logo" onClick={onClickPost}>
             { footer.Post
                 ?
@@ -261,7 +261,7 @@ function Footer({Link,postImg,setpostimg,desktopView }) {
            
           </span>
       </Link>
-           <Link to='/userprofile' className='back-to-homepage'>
+           <Link to='/userprofile' className='back-to-homepage tools-child' >
               <span className="footer-span logo" onClick={onClickUserPage}>
                   <div className="profile-pic">
                       <img src={askforusername.userimg} className="tools-pfp" alt="pfp"/>
@@ -301,7 +301,7 @@ function Footer({Link,postImg,setpostimg,desktopView }) {
         </div>
         <div className="others-cont-divs" onClick={linkNoWork}><div>Switch accounts</div></div>
        
-        <Link to='/' className='others-cont-divs'  onClick={logOut}><div> <div>Log out</div> </div></Link>
+        <Link to='/login' className='others-cont-divs'  onClick={logOut}><div> <div>Log out</div> </div></Link>
        
       </div>
      </div>

@@ -124,7 +124,7 @@ return (
 <Router>
 <div className='global'>
 <Routes>
-    <Route path='/' element={
+    <Route path='/login' default element={
     <LoginPage Link={Link}  login={login}
     />}/>
     <Route  path='/homepage'  default element={
